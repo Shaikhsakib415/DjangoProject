@@ -1,0 +1,54 @@
+{% extends 'headerfooter.html' %}
+{% load static %}
+{% block content %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'table.css' %}">
+<body>
+    {% if data %}
+
+<div class="w3-container">
+  <h2> Your Orders {{ user }}</h2>
+  {% for d in show_data %}
+  <ul class="w3-ul w3-card-4">
+    <li class="w3-bar">
+      <span onclick="this.parentElement.style.display='none'" class="w3-bar-item w3-button w3-white w3-xlarge w3-right"><a href="{% url 'cart_remove' d.id %}">×</a></span>
+     
+      <div class="w3-bar-item">
+        <span class="w3-large">{{d.pro_name}}</span><br>
+        <span> of Quantity : {{d.qty}}</span><br>
+        <span> at Price :{{d.pro_price}}</span>
+      </div>
+    </li>
+  </ul>
+  {% endfor %}
+</div>
+
+<center>
+<br>
+<div>
+    Your Payable Bill = {{ total }}
+</div>
+
+<td>
+    <div class="col-md-12 room-single ftco-animate mb-5 mt-5">
+        <h4 class="mb-4">
+    <a href="{% url 'check' 'pytm' %}"
+    target='_blank' rel='im-checkout' data-behaviour='remote'
+    data-style='light' data-text="Pay with Paytm" style="border-radius: 2px;display: inline-block;border: 1px solid #e6ebf3;padding: 0 40px;color: #182233;font-size: 14px;text-decoration: none;font-family: 'Nunito Sans', sans-serif;height: 48px;line-height: 48px;background: #00b9f5;color: #ffffff;border: 1px solid #00b9f5;">
+    <span>Pay Bill</span></a></a></h4>
+    </div>
+    <a href="{% url 'check' 'cash' %}">Pay With Cash</a><br>
+    
+    <a href="{% url 'qrcode' 'pro.id' %}">Generate Qr code</a>
+</td>
+</center>
+
+{% else %}
+    <h1> Please Place Order </h1>
+{% endif %}
+<br>
+<a href="{% url 'index' %}">Add New Items  in your cart .</a>
+<br>
+
+{% endblock %}

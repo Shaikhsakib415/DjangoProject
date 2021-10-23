@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login/bootstrap.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login/fontawesome-all.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login/iofrm-style.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login/iofrm-theme2.css'%}">
+</head>
+<body>
+    <div class="form-body">
+        
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg">
+                <img src="{% static 'images/login/abc.jpg'%}" height="800">
+                </div>
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Welcome Back </h3>
+                        <p>Login As Author </p>
+                        <div class="page-links">
+                            <a href="{% url 'alogin'%}" class="active">Login</a><a href="{% url 'areg' %}">Register</a>
+                        </div>
+                
+                        <form method="POST">
+                            {% csrf_token %}
+                            <input class="form-control" type="text" name="Email" placeholder="E-mail Address" required>
+                            <input class="form-control" type="password" name="Password" placeholder="Password" required>
+                            <ul class="messages">
+                                {% for message in messages %}
+                                  <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                                  <label class="anim">
+                                    <span>{{ message }}</span>
+                                  </label>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                              <div>
+                                <a href="{% url 'login'%}" class="active">Login As a Customer ..</a>
+                            </div>
+                            <div class="form-button">
+                                <button id="submit" type="submit" class="ibtn">Login</button> <a href="{% url 'aforget' %}">Forget password?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="{% static 'js/login/jquery.min.js'%}"></script>
+<script src="{% static 'js/login/popper.min.js'%}"></script>
+<script src="{% static 'js/login/bootstrap.min.js'%}"></script>
+<script src="{% static 'js/login/main.js'%}"></script>
+</body>
+</html>

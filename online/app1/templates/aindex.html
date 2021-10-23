@@ -1,0 +1,80 @@
+{% extends 'a.html' %}
+{% load static %}
+{% block content %}
+
+
+		<main>
+			<!-- Product Section -->
+			<div id="product-section" class="product-section container-fluid no-padding" style="padding-top: 60px;">
+				<!-- Container -->
+				<div class="container">
+					<div class="row">
+						<!-- Section Header -->
+						<div class="section-header">
+							<h3>Dashboard of Artist</h3>
+							
+							<img src="{% static 'images/section-seprator.png' %}" alt="section-seprator" />
+						</div><!-- Section Header /- -->
+					    
+						
+						
+						<section>
+							
+							<ul class="nospace group overview">
+								<div class="table-responsive">
+									<div class="table-responsive">
+										<table class="table v-middle">
+											<thead>
+												<tr class="bg-light">
+													<th class="border-top-0">Name</th>
+													<th class="border-top-0">Picture</th>
+													<th class="border-top-0">Prices</th>
+													<th class="border-top-0">Detail</th>
+							
+													<th class="border-top-0">Delete</th>
+													<th class="border-top-0">Update</th>
+												</tr>
+											</thead>
+											<tbody>
+												{% for i in prod reversed %}
+												<tr>
+													<td>
+														<div class="d-flex align-items-center">
+															
+															<div class="">
+																<h4 class="m-b-0 font-16">{{ i.pro_name }}</h4>
+															</div>
+														</div>
+													</td>
+													<td>
+														<div class="user-pic"><img src="{{ i.pro_image.url }}"  width="100" /></div> 
+													</td>
+													<td>
+														<h5 class="m-b-0">Rs. {{ i.pro_price }}</h5>
+													</td>
+													<td>{{ i.pro_detail }}</td>
+													<td><a href="{% url 'delete_product' i.id %}"><button class="btn" style="background-color:#b6795f;color: #FFF;">Delete</button></a></td>
+													<td><a href="{% url 'update_pro' i.id %}"><button class="btn" style="background-color:#b6795f;color: #FFF;">Update</button></a></td>
+												</tr>
+												{% endfor %}
+											</tbody>
+										</table>
+									</div>
+						</div>
+							
+							
+							
+							
+						</ul><!-- Products /- -->
+					</div><!-- Row /- -->
+					
+				</div><!-- Container /- -->
+			</div><!-- Product Section /- -->
+			
+			
+					
+			
+		</main>
+	
+			
+{% endblock %}	

@@ -1,0 +1,29 @@
+
+{% extends 'a.html' %}
+{% load static %}
+{% block content %}
+
+
+<section>
+    
+    <ul class="nospace group overview">
+      {% for i in prod reversed %}
+
+      <li class="one_third">
+        <figure><a href="#"><img src="{{ i.pro_image.url }}" alt=""></a>
+          <figcaption>
+            <h6 class="heading">{{ i.pro_name }}</h6>
+            <p>Auther : {{ i.auther }}</p>
+            <p>price : {{ i.pro_price }}</p>
+            <p>{{ i.pro_detail }}</p>
+            <a href="{% url 'update_pro' i.id %}">Update</a>
+            <a href="#">Delete</a>
+            <a href="#">view</a>
+          </figcaption>
+        </figure>
+      </li>
+
+      {% endfor %}
+    </ul>
+  </section>
+  {% endblock %}	

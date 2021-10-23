@@ -1,0 +1,214 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class=""><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<title>Art Gallery of</title>
+	
+
+	<!-- Standard Favicon -->
+	<link rel="icon" type="image/x-icon" href="{% static 'images//favicon.ico'%}" />
+	
+	<!-- For iPhone 4 Retina display: -->
+	<link rel="apple-touch-icon-precomposed" href="{% static 'images//apple-touch-icon-114x114-precomposed.png'%}">
+	
+	<!-- For iPad: -->
+	<link rel="apple-touch-icon-precomposed" href="{% static 'images//apple-touch-icon-72x72-precomposed.png'%}">
+	
+	<!-- For iPhone: -->
+	<link rel="apple-touch-icon-precomposed" href="{% static 'images//apple-touch-icon-57x57-precomposed.png' %}">	
+	
+	<!-- Library - Google Font Familys -->
+	<link href="url 'https://fonts.googleapis.com/css?family=Arizonia|Crimson+Text:400,400i,600,600i,700,700i|Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" href="{% static 'css/settings.css' %}">
+ 
+	<!-- RS5.0 Layers and Navigation Styles -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/layers.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/navigation.css' %}">
+	
+	<!-- Library - Bootstrap v3.3.5 -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lib.css' %}">
+	
+	<!-- Custom - Common CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/plugins.css'%}">			
+	<link rel="stylesheet" type="text/css" href="{% static 'css/navigation-menu.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/shortcode.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	
+	
+	<!--[if lt IE 9]>
+		<script src="js/html5/respond.min.js"></script>
+    <![endif]-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
+	<div class="main-container">
+		<!-- Loader -->
+		<div id="site-loader" class="load-complete">
+			<div class="loader">
+				<div class="loader-inner ball-clip-rotate">
+					<div></div>
+				</div>
+			</div>
+		</div><!-- Loader /- -->
+
+		<!-- Header -->
+		<header class="header-section container-fluid no-padding">
+			
+			
+			<!-- Menu Block -->
+			<div class="container-fluid no-padding menu-block">
+				<!-- Container -->
+				<div class="container">
+					<!-- nav -->
+					<nav class="navbar navbar-default ow-navigation">
+						<div class="navbar-header">
+							<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a href="{% url 'aindex' %}" class="navbar-brand">Art <span>Gallery</span></a>
+						</div>
+						
+						<!-- Menu Icon -->
+						<div class="menu-icon">
+							<ul class="cart">
+								<li>
+									
+									<a aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" id="cart" class="btn dropdown-toggle" title="Add To Cart" href="#"><i class="icon icon-ShoppingCart"></i></a>
+									
+								</li>
+								
+							</ul>
+							<div class="search">	
+								<a href="#" id="search" title="Search"><i class="icon icon-Search"></i></a>
+							</div>
+							
+							
+						</div><!-- Menu Icon /- -->
+						<div class="navbar-collapse collapse navbar-right" id="navbar" style="margin-right: 220px;">
+							<ul class="nav navbar-nav">
+								<li class="active dropdown">
+									<a href="{% url 'aindex' %}" title="Home" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+									<i class="ddl-switch fa fa-angle-down"></i>
+									
+								</li>
+
+								
+								<li><a href="{% url 'add_prod' %}" title="Add Product"> Add products</a></li>
+								<li><a href="{% url 'auth_gallery' %}" title="Gallery">Gallery</a></li>
+								<li><a href="{% url 'auth_logout' %}" title="login">logout</a></li>
+								
+							</ul>
+							
+						</div><!--/.nav-collapse -->
+                	</nav><!-- nav /- -->
+                <!-- Search Box -->
+                
+            </div><!-- Container /- -->
+        </div><!-- Menu Block /- -->
+    </header><!-- Header /- -->
+
+{% block content %}
+{% endblock %}
+<footer id="footer-main" class="footer-main container-fluid">
+    <!-- Container -->
+    <div class="container">
+        <div class="row">
+            <!-- Widget About -->
+            <aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget widget_about">
+                <a href="{% url 'index' %}" title="Art Gallery">Art<span> Gallery</span></a>
+                <div class="info">
+                    <p><i class="icon icon-Pointer"></i>ITNU Nirma Univercity,Ahemadabad 382481,Gujarat,India</p>
+                    <p><i class="icon icon-Phone2"></i><a href="tel:(91)1234567890" title="Phone" class="phone">(+91) 123 456 7890</a></p>
+                    <p><i class="icon icon-Imbox"></i><a href="mailto:info@ArtGallery.com" title="info@ArtGallery.com">info@ArtGallery.com</a></p>
+                </div>
+            </aside><!-- Widget About /- -->
+            <!-- Widget Links -->
+            <aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget widget_links">
+                <h3 class="widget-title">Popular Links</h3>
+                <ul>
+                    <li><a href="#product-section" title="Popular Products">Our Products</a></li>
+                    <li><a href="{% url 'about' %}" title="About Us">About Us</a></li>
+                    <li><a href="{% url 'contactUs' %} " title="Contact Us">Contact Us</a></li>
+					<li><a href="{% url 'login' %} " title="Login">Login</a></li>
+                </ul>
+            </aside><!-- Widget Links /- -->
+            <!-- Widget Account -->
+            <aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget widget_links widget_account">
+                <h3 class="widget-title">my account</h3>
+                <ul>
+                    <li><a href="#" title="My Order Details">My Order Details</a></li>
+                    <li><a href="#" title="My credit Offers">My credit Offers</a></li>
+                    <li><a href="#" title="My addresses">My addresses</a></li>
+                    <li><a href="#" title="My Personal Details">My Personal Details</a></li>
+                    <li><a href="#" title="My Account Details">My Account Details</a></li>
+                </ul>
+            </aside><!-- Widget Account /- -->
+            <!-- Widget Newsletter -->
+            <aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget widget_newsletter">
+                <h3 class="widget-title">newsletter</h3>
+                <div class="input-group">
+                    <input class="form-control" placeholder="email address" type="text">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><i class="fa fa-paper-plane-o"></i></button>
+                    </span>
+                </div>
+                <h5>Get New Updates From Our Collections</h5>
+                
+            </aside><!-- Widget Newsletter /- -->
+        </div>
+        <div class="copyright-section">
+            <div class="coyright-content">
+                <p>&copy; ArtGallery. all rights reserved</p>
+            </div>	
+            <ul>
+                <li><a href="#" title="Delivery Information">Delivery Information</a></li>
+                <li><a href="#" title="Privacy Policy">Privacy Policy</a></li>
+                <li><a href="#" title="Terms & Condition">Terms & Condition</a></li>
+            </ul>
+        </div>
+    </div><!-- Container /- -->
+</footer><!-- Footer Main /- -->
+
+</div>
+
+
+<!-- JQuery v1.12.4 -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+
+<!-- Library - Js -->
+<script src="{% static 'js/lib.js' %}"></script>
+
+<script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+
+<!-- RS5.0 Core JS Files -->
+<script type="text/javascript" src="{% static 'js/jquery.themepunch.tools.min.js?rev=5.0' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.themepunch.revolution.min.js?rev=5.0' %}"></script>
+<script type="text/javascript" src="{% static 'js/revolution.extension.video.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/revolution.extension.slideanims.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/revolution.extension.layeranimation.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/revolution.extension.navigation.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/revolution.extension.actions.min.js' %}"></script>
+
+<!-- Library - Theme JS -->
+<script src="{% static 'js/functions.js' %}"></script>
+
+</body>
+</html>
+

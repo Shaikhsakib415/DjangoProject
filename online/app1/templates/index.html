@@ -1,0 +1,47 @@
+{% extends 'headerfooter.html' %}
+{% load static %}
+{% block content %}
+
+
+		<main>
+			<!-- Product Section -->
+			<div id="product-section" class="product-section container-fluid no-padding" style="padding-top: 60px;">
+				<!-- Container -->
+				<div class="container">
+					<div class="row">
+						<!-- Section Header -->
+						<div class="section-header">
+							<h3>Our Products</h3>
+							<p>The aim of art is to represent not the outward appearance of things, but their inward significance.</p>
+							<img src="{% static 'images/section-seprator.png' %}" alt="section-seprator" />
+						</div><!-- Section Header /- -->
+					</div>
+					<!-- Product -->
+					
+					<div class="row">
+					  <ul class="products">
+						<!-- Product -->
+						{% for i in data  %}
+						<li class="product design" style="margin-left:70px ;">
+							<a href="#">
+								<img src="{{ i.pro_image.url }}" alt="Product" style="height: 420px; width: 350px;"/>
+								<h5 style="text-align: left;color:black;font-size: 17px;margin-top: 5px;">{{ i.pro_name }}</h5>
+								<a href="{% url 'auther_view' i.id %}" class="w3-button w3-black">By: {{ i.auther }}</a>
+								<p style="color :black;font-size: small;">{{ i.pro_detail }}</p></br>
+								<span class="price"> Price : {{ i.pro_price }}</span>	
+							<a href="{% url 'place_order' i.id %}" class="addto-cart" title="Add To Cart">Add To Cart</a>
+							
+						</li>
+					  <!-- Product /- -->
+					{% endfor %} 
+					</ul> 
+				</div>
+						
+								
+				</div><!-- Container /- -->
+			</div><!-- Product Section /- -->
+			
+		</main>
+	
+			
+{% endblock %}	

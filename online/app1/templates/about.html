@@ -1,0 +1,104 @@
+{% extends 'headerfooter.html' %}	
+{% load static %}	
+{% block content%}
+		<main>
+			<!-- Page Banner -->
+			<div class="page-banner container-fluid no-padding">
+				<!-- Container -->
+				<div class="container">
+					<div class="banner-content">
+						<h3>About Us</h3>
+						<p>The aim of art is to represent not the outward appearance of things, but their inward significance.</p>
+					</div>
+					
+				</div><!-- Container /- -->
+			</div><!-- Page Banner /- -->
+			
+			<!-- About Section -->
+			<div class="about-section container-fluid no-padding">
+				<!-- Container -->
+				<div class="container">
+					<!-- Section Header -->
+					<div class="section-header">
+						<h3>About Our Art Gallery</h3>
+						<p>The aim of art is to represent not the outward appearance of things, but their inward significance.</p>
+						<img src="{% static 'images/section-seprator.png' %}" alt="section-seprator" />
+					</div><!-- Section Header /- -->
+					<div class="col-md-6 col-sm-6 col-xs-6">
+						<img src="{% static 'images/abc1.jpg' %}" alt="about" />
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-6">
+						<div class="about-content">
+							<h5>When you shop on <span>Art Gallery</span> you can assured about the Robust of the products you're buying.</h5>
+							<p>You wanna be where you can see our troubles are all the same. You wanna be where everybody knows Your name. So lets make the most of this beautiful day. Since we're together. , We're gonna do it. On your mark get set and go now.</p>
+							<p>Making their way the only way they know how. That's just a little bit more than the law will allow. Doin' it our way. </p>	
+							<ul>
+								<li>We Provide Non Damaged Product At Your Home</li>
+								<li>Art Gallery Provides Worlds beautiful Art Pieces At Your Home</li>
+								<li>We Provide Best Art Pieces From Best Artist</li>
+							</ul>
+						</div>
+					</div>
+				</div><!-- Container /- -->
+			</div><!-- About Section /- -->
+			
+			
+			<!-- Testimonial Section -->
+			<div class="testimonial-section container-fluid">
+				<!-- Container -->
+				<div class="container">
+					<!-- Section Header -->
+					<div class="section-header">
+						<h3>Happy Customer Says</h3>
+						<p> The aim of art is to represent not the outward appearance of things, but their inward significance.</p>
+						<img src="{% static 'images/section-seprator.png' %}" alt="section-seprator" />
+					</div><!-- Section Header /- -->
+					<!-- Main Carousel -->
+					<div id="main-carousel1" class="carousel slide carousel-fade" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#main-carousel1" data-slide-to="0" class="active"></li>
+							<li data-target="#main-carousel1" data-slide-to="1"></li>
+							<li data-target="#main-carousel1" data-slide-to="2"></li>
+						</ol>
+						<div role="listbox" class="carousel-inner">
+							<div class="item active">
+								<div class="testimonial-content">
+									
+									<p>Art Gallery Is Great Website Where You Can find And Buy Numberius Beautiful Art Pieces All Over The World</p>
+									<img src="{% static 'images/ClientBack1.jpg' %}" alt="testi" width="60" />
+									
+									<h3>Strahow stuart</h3>
+									<h5>Customer</h5>
+									<h5>USA</h5>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimonial-content">
+									
+									<p>A Website To Trust For Increasing The Artist Indivual Business</p>
+									<img src="{% static 'images/ClientBack3.jpg' %}" alt="testi" width="60"/>
+									
+									<h3>Philip Martin</h3>
+									<h5>Artist</h5>
+									<h5>Russia</h5>
+								</div>
+							</div>
+							<div class="item">
+								<div class="testimonial-content">
+									<p>Art Gallery Is Website Where We Can Find Specific Artist All The Art Pieces And Artist Personal Details</p>
+									<img src="{% static 'images/ClientBack4.jpg' %}" alt="testi" width="60"/>
+									
+									<h3>Vince Fleming</h3>
+									<h5>Customer</h5>
+									<h5>Canada</h5>
+								</div>
+							</div>
+						</div>
+					</div><!-- Main Carousel /-  -->
+				</div><!-- Container /- -->
+			</div><!-- Testimonial Section /- -->
+			
+			
+		</main>
+		
+{% endblock %}		

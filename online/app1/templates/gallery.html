@@ -1,0 +1,19 @@
+{% extends 'a.html' %}
+{% load static %}
+{% block content %}
+
+<div >
+  <div class="section-header" style="margin-top:50px ;">
+    <h3><u>Gallery View </u></h3>
+    
+    <img src="{% static 'images/section-seprator.png' %}" alt="section-seprator" />
+  </div><!-- Section Header /- -->
+      <ul class="products">
+        {% for i in pro_img %}
+        <li class="product design">
+          <img src="{{ i.pro_image.url }}" alt="Product" style="height: 420px; width: 305px;"/>
+        </li>
+        {% endfor %}
+      </ul>
+  </div>
+{% endblock %}	

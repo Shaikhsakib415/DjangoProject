@@ -1,0 +1,123 @@
+{% extends 'a.html' %}
+{% load static %}
+{% block content %}
+<div style="margin-top: 50px;margin-bottom: 100px;">
+
+    <div class="section-header">
+        <h3>Add Product</h3>
+        
+        <img src="{% static 'images/section-seprator.png' %}" alt="section-seprator" />
+      </div><!-- Section Header /- -->
+    <center>
+        <div class="form-detail">
+             <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                <img src ="{{ prod.pro_image.url }}"width="100">
+                </div>
+                <div class="row">
+                <input class="form-control" type="file" name="img" accept="image/x-png,image/gif,image/jpeg,image/jpg" style="width: 20%;" id="up_image">
+                <span id="image" style="color: black"></span><br>
+                </div>
+                <div class="form-group">
+                <input class="form-control" type="text" name="img_name" id="id_img_name" placeholder="Image Name" value="{{ prod.pro_name }}" style="width: 20%;">
+                <span id="iname" style="color: black"></span><br>
+                 </div>
+                 <div class="form-group">
+                <input  class="form-control" type="text" name="img_price" id="id_img_price" placeholder="Image Price" value="{{ prod.pro_price }}" style="width: 20%;">
+                <span id="iprice" style="color: black"></span><br>
+                </div>
+                <div class="form-group">
+                <textarea name="img_details" id="id_img_details" class="form-control" style="width: 20%;" placeholder="Image Discription">{{ prod.pro_detail }}</textarea>
+                <span id="idetails" style="color: black"></span><br>
+                </div>
+                <div class="form-button">
+                    <button id="submit" type="submit" class="btn_submit">Add Product</button>
+                </div>
+            </form>
+        </div>
+        </center>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#submit').click(function () {
+
+            var image=$('#up_image').val();
+            var name=$('#id_img_name').val();
+            var price=$('#id_img_price').val();
+
+            var details=$('#id_img_details').val();
+
+            var flag=0;
+
+            if (image=="") {
+                document.getElementById('image').innerHTML="Image Must Be Uploaded!..";
+
+                $('#image').show();
+                flag=1;
+                
+            }
+            else {
+                document.getElementById('image').innerHTML="";
+
+                $('#image').show();
+            
+
+            }
+            if (name=="") {
+
+                document.getElementById('iname').innerHTML="Please Fill Image Name!..";
+
+                $('#iname').show();
+                flag=1;
+                
+            } 
+            else {
+                document.getElementById('iname').innerHTML="";
+
+                $('#iname').show();
+                
+            }
+            if (price=="") {
+
+                document.getElementById('iprice').innerHTML="Please Fill Price!..";
+
+                $('#iprice').show();
+                flag=1;
+
+            } 
+            else {
+
+                document.getElementById('iprice').innerHTML="";
+
+                $('#iprice').show();
+
+            }
+            
+            if (details=="") {
+
+                document.getElementById('idetails').innerHTML="Please Enter Details Of Art Piece";
+
+                $('#idetails').show();
+                flag=1;
+
+            } 
+            else {
+
+                document.getElementById('idetails').innerHTML="";
+
+                $('#idetails').show();
+
+            }
+            if (flag==1) {
+                return false;
+            }
+
+        });
+        
+    });
+    
+
+</script>
+{% endblock %}	

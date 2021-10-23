@@ -1,0 +1,20 @@
+{% extends 'a.html' %}
+{% load static %}
+{% block content %}
+{% for i in data  %}
+						<li class="product design" style="margin-left:70px ;">
+							<a href="#">
+								<img src="{{ i.pro_image.url }}" alt="Product" style="height: 420px; width: 350px;"/>
+								<h5 style="text-align: left;color:black;font-size: 17px;margin-top: 5px;">{{ i.pro_name }}</h5>
+								<a href="{% url 'auth_gallery' %}" class="w3-button w3-black">By: {{ i.auther }}</a>
+								<p style="color :black;font-size: small;">{{ i.pro_detail }}</p></br>
+								<input type="number" id="quantity_610094fe7a505" class="input-text qty text" step="1" min="1" max="10" name="quantity" value="1" title="Qty" size="4" placeholder="" inputmode="numeric">
+								<span class="q_inc"></span><span class="q_dec"></span></div>
+
+								<span class="price"> Price : {{ i.pro_price }}</span>
+									
+							<a href="{% url 'orders' %}"class="addto-cart" title="Add To Cart">Add To Cart</a>
+							
+						</li>
+                        {% endfor %} 
+                        {% endblock %}
